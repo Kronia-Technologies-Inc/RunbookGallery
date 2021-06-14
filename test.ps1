@@ -14,6 +14,6 @@ else
 {
     # Convert parameters from json into hash table so they can be passed to the command
     $Params = @{}
-    Write-Output $Command
+    Write-Output $Params
 
 }
