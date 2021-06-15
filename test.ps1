@@ -10,5 +10,6 @@ param (
 
 Write-Output $VMResourceGroupName
 Write-Output $VMName
+Write-Output "Cambio"
 
 
