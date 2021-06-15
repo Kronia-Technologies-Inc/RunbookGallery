@@ -6,8 +6,6 @@ param (
     [Parameter(Mandatory=$false)]
     [string] $VMName
     
-    [Parameter(Mandatory=$false)]
-    $TagName = $null
 )
 if ([string]::IsNullOrEmpty($Parameters))
 {
