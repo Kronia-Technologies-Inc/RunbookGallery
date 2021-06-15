@@ -1,15 +1,18 @@
 Param
 (
-    [Parameter(Mandatory=$false)]
+    [Parameter(Mandatory=$true)]
     $VMResourceGroupName,
 
-    [Parameter(Mandatory=$false)]
+    [Parameter(Mandatory=$true)]
     $VMName,
+    
+    [Parameter(Mandatory=$true)]
+    $AutomationAccount,
 
     [Parameter(Mandatory=$false)]
     $TagName = $null
 ) 
-$RunAsConnection = Get-AutomationConnection -Name "AzureRunAsConnection"
+$RunAsConnection = Get-AutomationConnection -Name $AutomationAccount
 
 Add-AzureRmAccount `
     -ServicePrincipal `
