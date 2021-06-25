@@ -1,7 +1,7 @@
 Param
 (
     [Parameter(Mandatory=$false)]
-    $VMResourceGroupName,
+    $WAResourceGroupName,
 
     [Parameter(Mandatory=$false)]
     $WAName,
@@ -18,5 +18,5 @@ Add-AzureRmAccount `
     -ApplicationId $RunAsConnection.ApplicationId `
     -CertificateThumbprint $RunAsConnection.CertificateThumbprint | Write-Verbose
 
-Write-Output ("Starting WA " + $WAName + " in resource group " + $VMResourceGroupName)
-    Start-AzWebApp -ResourceGroupName $VMResourceGroupName -Name $WAName
+Write-Output ("Starting WA " + $WAName + " in resource group " + $WAResourceGroupName)
+    Start-AzWebApp -ResourceGroupName $WAResourceGroupName -Name $WAName
