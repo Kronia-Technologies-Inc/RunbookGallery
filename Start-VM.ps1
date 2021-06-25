@@ -1,10 +1,10 @@
 Param
 (
     [Parameter(Mandatory=$false)]
-    $VMResourceGroupName,
+    $ResourceGroupName,
 
     [Parameter(Mandatory=$false)]
-    $VMName,
+    $Name,
 
     [Parameter(Mandatory=$false)]
     $TagName = $null
@@ -18,5 +18,5 @@ Add-AzureRmAccount `
     -ApplicationId $RunAsConnection.ApplicationId `
     -CertificateThumbprint $RunAsConnection.CertificateThumbprint | Write-Verbose
 
-Write-Output ("Starting VM " + $VMName + " in resource group " + $VMResourceGroupName)
-    Start-AzureRmVM -ResourceGroupName $VMResourceGroupName -Name $VMName | Write-Verbose
+Write-Output ("Starting VM " + $Name + " in resource group " + $ResourceGroupName)
+    Start-AzureRmVM -ResourceGroupName $ResourceGroupName -Name $Name | Write-Verbose
