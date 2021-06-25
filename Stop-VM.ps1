@@ -1,10 +1,10 @@
 Param
 (
     [Parameter(Mandatory=$true)]
-    $VMResourceGroupName,
+    $ResourceGroupName,
 
     [Parameter(Mandatory=$true)]
-    $VMName,
+    $Name,
     
     [Parameter(Mandatory=$true)]
     $AutomationAccount,
@@ -21,5 +21,5 @@ Add-AzureRmAccount `
     -ApplicationId $RunAsConnection.ApplicationId `
     -CertificateThumbprint $RunAsConnection.CertificateThumbprint | Write-Verbose
 
-    Write-Output ("Stopping VM " + $VMName + " in resource group " + $VMResourceGroupName)
-    Stop-AzureRmVM -ResourceGroupName $VMResourceGroupName -Name $VMName -Force | Write-Verbose
+    Write-Output ("Stopping VM " + $Name + " in resource group " + $ResourceGroupName)
+    Stop-AzureRmVM -ResourceGroupName $ResourceGroupName -Name $Name -Force | Write-Verbose
