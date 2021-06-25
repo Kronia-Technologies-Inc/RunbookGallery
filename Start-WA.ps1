@@ -19,4 +19,4 @@ Add-AzureRmAccount `
     -CertificateThumbprint $RunAsConnection.CertificateThumbprint | Write-Verbose
 
 Write-Output ("Starting WA " + $WAName + " in resource group " + $WAResourceGroupName)
-    Start-AzWebApp -ResourceGroupName $WAResourceGroupName -Name $WAName
+    Start-AzWebApp -ResourceGroupName $WAResourceGroupName -Name $WAName | Write-Verbose
